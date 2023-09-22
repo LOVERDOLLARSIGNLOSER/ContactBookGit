@@ -93,4 +93,26 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    public Contact getContactByNumber(int phoneNumber){
+        Contact found = null;
+        for(int i = 0; i < counter; i++){
+            if(contacts[counter].getPhone() == phoneNumber){
+                found = contacts[i];
+                break;
+            }
+        }
+        return found;
+    }
+
+    public boolean hasContactWithNumber(int phoneNumber){
+        boolean found = false;
+        for(int i = 0; i < counter; i++){
+            if(contacts[counter].getPhone() == phoneNumber){
+                found = true;
+                break;
+            }
+        }
+        return found;
+    }
+
 }
