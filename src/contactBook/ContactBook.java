@@ -60,6 +60,18 @@ public class ContactBook {
         contacts[searchIndex(name)].setEmail(email);
     }
 
+    public boolean hasDuplicates() {
+        int[] aux = new int[counter];
+        int counterAux = 0;
+        for(int i = 0; i < counter; i++) {
+            for(int j = 0; j < counterAux; j++)
+                if(aux[j] == contacts[i].getPhone()) return true;
+
+            aux[counterAux++] = contacts[i].getPhone();
+        }
+        return false;
+    }
+
     private int searchIndex(String name) {
         int i = 0;
         int result = -1;
