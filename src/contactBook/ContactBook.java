@@ -108,7 +108,7 @@ public class ContactBook {
     public Contact getContactByNumber(int phoneNumber){
         Contact found = null;
         for(int i = 0; i < counter; i++){
-            if(contacts[counter].getPhone() == phoneNumber){
+            if(contacts[i].getPhone() == phoneNumber){
                 found = contacts[i];
                 break;
             }
@@ -119,7 +119,7 @@ public class ContactBook {
     public boolean hasContactWithNumber(int phoneNumber){
         boolean found = false;
         for(int i = 0; i < counter; i++){
-            if(contacts[counter].getPhone() == phoneNumber){
+            if(contacts[i].getPhone() == phoneNumber){
                 found = true;
                 break;
             }
