@@ -61,9 +61,9 @@ public class Main {
                 case FIND_CONTACT:
                     findContact(in,cBook);
                     break;
-                case CHECK_NUMBER:
-                    checkNumber(in,cBook);
-                    break;
+             /*   case CHECK_NUMBER:
+                    checkNumber(cBook);
+                    break; */
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -163,18 +163,12 @@ public class Main {
         int phone;
         phone = in.nextInt(); in.nextLine();
         
-        if (cBook.hasContactWithNumber()) {
-            System.out.println(cBook.getContactByNumber().getName());
+        if (cBook.hasContactWithNumber(phone)) {
+            System.out.println(cBook.getContactByNumber(phone).getName());
         }
         else System.out.println(PHONE_DOES_NOT_EXIST);
     }
 
 
-     private static void checkNumber (ContactBook cBook) {
-
-        if (cBook.hasDuplicates()) {
-            System.out.println(SAME_NUMBER_CONTACTS);
-        }
-        else System.out.println(ALL_DIFFERENT_NUMBERS);
-    }
+   
 }
