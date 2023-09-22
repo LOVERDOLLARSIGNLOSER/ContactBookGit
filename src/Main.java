@@ -61,9 +61,9 @@ public class Main {
                 case FIND_CONTACT:
                     findContact(in,cBook);
                     break;
-             /*   case CHECK_NUMBER:
+                case CHECK_NUMBER:
                     checkNumber(cBook);
-                    break; */
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -170,5 +170,11 @@ public class Main {
     }
 
 
-   
+     private static void checkNumber (ContactBook cBook) {
+
+        if (cBook.hasDuplicates()) {
+            System.out.println(SAME_NUMBER_CONTACTS);
+        }
+        else System.out.println(ALL_DIFFERENT_NUMBERS);
+    }
 }
